@@ -1,0 +1,8 @@
+<%= link_to 'Create article', new_article_path %>
+<hr>
+
+<h1>Articles</h1>
+
+<%= 'No news right now, Chef' if @articles.empty? %>
+
+<%= render @articles %>

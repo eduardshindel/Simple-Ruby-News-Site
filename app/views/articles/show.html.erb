@@ -1,0 +1,15 @@
+<%= link_to 'All articles', articles_path %>
+|
+<%= link_to 'Create new article', new_article_path %>
+|
+<%= link_to 'Edit current article', edit_article_path(@article) %>
+|
+<%= link_to 'Delete current article', article_path(@article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+<hr>
+
+<h1><%= @article.title %></h1>
+<p>Category : <%= @article.category %></p>
+<p>Preview : <%= @article.preview %></p>
+<p>Text : <%= @article.body %></p>
+
+<p>Pic : <%= image_tag @article.img.url(:thumb), alt: @article.title if @article.img? %></p>
