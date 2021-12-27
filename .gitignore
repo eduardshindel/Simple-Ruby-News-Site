@@ -38,3 +38,7 @@ yarn-debug.log*
 /coverage
 
 /config/database.yml
+
+vendor/*
+
+Gemfile.lock
