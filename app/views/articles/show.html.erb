@@ -12,4 +12,6 @@
 <p>Preview : <%= @article.preview %></p>
 <p>Text : <%= @article.body %></p>
 
-<p>Pic : <%= image_tag @article.img.url(:thumb), alt: @article.title if @article.img? %></p>
+<p><%= image_tag @article.img.url(:thumb), alt: @article.title if @article.img? %></p>
+
+<p><%= image_tag @article.img.url if @article.img?%></p>

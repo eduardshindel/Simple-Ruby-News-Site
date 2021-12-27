@@ -1,7 +1,5 @@
 class ArticlesController < ApplicationController
-  extend CarrierWave::Mount
   before_action :set_article, only: %i[show edit update destroy]
-  mount_uploader :img, PictureUploader
 
   def index
     @articles = Article.all
