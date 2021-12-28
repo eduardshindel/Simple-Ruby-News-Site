@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   extend CarrierWave::Mount
+  before_action :require_login
   before_action :set_article, only: %i[show edit update destroy]
   mount_uploader :img, PictureUploader
 
@@ -48,4 +49,11 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body, :preview, :category, :img)
   end
+
+  def require_login
+    if !logged_in?
+      flash[:danger] = 'You have not access to this part of site!'
+      redirect_to controller: "sessions", action: "new"
+    end
+  end 
 end
