@@ -5,4 +5,7 @@
 
 <%= 'No news right now, Chef' if @articles.empty? %>
 
+<%= select_tag "Category", options_from_collection_for_select(Article.all, :id, :category), {:class=>'form-control', :prompt => 'Selected category'}  %>
+
 <%= render @articles %>
+<%= will_paginate @articles %>

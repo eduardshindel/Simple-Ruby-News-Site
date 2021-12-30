@@ -1,1 +1,4 @@
 <h3><%= link_to article.title, article_path(article) %></h3>
+<p>Category : <%= article.category %></p>
+<p>Text : <%= article.body %></p>
+<p><%= image_tag article.img.url(:thumb), alt: article.title if article.img? %></p>
