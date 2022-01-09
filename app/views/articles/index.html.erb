@@ -1,7 +1,12 @@
-
-<%= link_to 'Create article', new_article_path %>
-<hr>
+<head>
 <%=javascript_include_tag "category_handler" %>
+<%=stylesheet_link_tag "articles" %>
+</head>
+
+<div>
+<%= link_to 'Create article', new_article_path %> 
+</div class="toolsbar">
+<hr>
 <h1>Articles</h1>
 
 <%= 'No news right now, Chef' if @articles.empty? %>
