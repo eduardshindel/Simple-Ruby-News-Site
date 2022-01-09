@@ -1,4 +1,6 @@
+<%=stylesheet_link_tag "articles" %>
 <% if logged_in? %>
+<div class="toolsbar">
 <%= link_to 'All articles', articles_path %>
 |
 <%= link_to 'Create new article', new_article_path %>
@@ -6,6 +8,7 @@
 <%= link_to 'Edit current article', edit_article_path(@article) %>
 |
 <%= link_to 'Delete current article', article_path(@article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+</div>
 <hr>
 <% end %>
 
