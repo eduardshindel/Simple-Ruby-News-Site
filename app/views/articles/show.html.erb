@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <%= link_to 'All articles', articles_path %>
 |
 <%= link_to 'Create new article', new_article_path %>
@@ -6,6 +7,7 @@
 |
 <%= link_to 'Delete current article', article_path(@article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
 <hr>
+<% end %>
 
 <h1><%= @article.title %></h1>
 <p>Category : <%= @article.category %></p>
