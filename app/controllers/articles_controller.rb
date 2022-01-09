@@ -1,11 +1,9 @@
 class ArticlesController < ApplicationController
-  extend CarrierWave::Mount
-  before_action :require_login
+  #before_action :require_login
   before_action :set_article, only: %i[show edit update destroy]
-  mount_uploader :img, PictureUploader
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 2)
   end
 
   def show; end

@@ -1,12 +1,12 @@
-
 <%= link_to 'Create article', new_article_path %>
 <hr>
+
 <%=javascript_include_tag "category_handler" %>
 <h1>Articles</h1>
 
 <%= 'No news right now, Chef' if @articles.empty? %>
 
-<%= select_tag "Category", options_for_select(Article.pluck(:category).uniq), :prompt => 'Select category', :onchange=>"categoryHandler(this.value)"  %>
+<%= select_tag "Category", options_for_select(Article.pluck(:category).uniq),:include_blank => 'All articles', :prompt => 'Select category', :onchange=>"categoryHandler(this.value)"    %>
 
 <%= render @articles %>
 <%= will_paginate @articles %>
