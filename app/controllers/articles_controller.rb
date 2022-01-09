@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  #before_action :require_login
+  before_action :require_login, only: %i[new edit update destroy] 
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
