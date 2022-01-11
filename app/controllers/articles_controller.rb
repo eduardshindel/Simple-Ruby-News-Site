@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :require_login, only: %i[new edit update destroy] 
+  before_action :require_login, only: %i[new edit update destroy]
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
@@ -49,9 +49,9 @@ class ArticlesController < ApplicationController
   end
 
   def require_login
-    if !logged_in?
+    unless logged_in?
       flash[:danger] = 'You have not access to this part of site!'
-      redirect_to controller: "sessions", action: "new"
+      redirect_to controller: 'sessions', action: 'new'
     end
-  end 
+  end
 end
