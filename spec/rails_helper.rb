@@ -6,11 +6,13 @@ require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 
-Capybara.register_driver :selenium_chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox)
+Capybara.register_driver :selenium_firefox do |app|
+  options = ::Selenium::WebDriver::Firefox::Options.new()
+  options.headless!
+  Capybara::Selenium::Driver.new(app, browser: :firefox, capabilities: options)
 end
 
-Capybara.javascript_driver = :selenium_chrome
+Capybara.javascript_driver = :selenium_firefox
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

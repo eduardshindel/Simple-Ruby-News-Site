@@ -6,12 +6,12 @@ ruby '3.0.2'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'bootstrap-sass'
 gem 'bcrypt'
+gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'will_paginate'
-gem 'will_paginate-bootstrap' 
+gem 'will_paginate-bootstrap'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
