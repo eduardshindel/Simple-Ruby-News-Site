@@ -4,5 +4,6 @@ FactoryBot.define do
     body { 'MyText' }
     img { 'MyString' }
     preview { 'MyText' }
+    category { 'MyText' }
   end
 end

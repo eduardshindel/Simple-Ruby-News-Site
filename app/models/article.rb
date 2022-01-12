@@ -1,4 +1,4 @@
 class Article < ApplicationRecord
-        validates_presence_of :title, :preview, :category, :body
-        mount_uploader :img, ImgUploader
+  validates :title, :preview, :category, :body, presence: true
+  mount_uploader :img, ImgUploader
 end
