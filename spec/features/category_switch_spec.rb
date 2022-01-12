@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'from category to all articles', type: :feature, driver: :selenium_firefox, js: true do
+describe 'switching categories', type: :feature, driver: :selenium_firefox, js: true do
   before do
    Article.create( title: 'politics_title', body: 'politics_body', preview: 'politics_preview', category: 'politics')
    Article.create(title: 'religion_title', body: 'religion_body', preview: 'religion_preview', category: 'religion')
