@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe 'switching categories', type: :feature, driver: :selenium_firefox, js: true do
-  before(:each) do
-   Article.create( title: 'politics_title', body: 'politics_body', preview: 'politics_preview', category: 'politics')
-   Article.create(title: 'religion_title', body: 'religion_body', preview: 'religion_preview', category: 'religion')
-  Article.create(title: 'also_religion_title', body: 'also_religion_body', preview: 'also_religion_preview',
+  before do
+    Article.create(title: 'politics_title', body: 'politics_body', preview: 'politics_preview', category: 'politics')
+    Article.create(title: 'religion_title', body: 'religion_body', preview: 'religion_preview', category: 'religion')
+    Article.create(title: 'also_religion_title', body: 'also_religion_body', preview: 'also_religion_preview',
                    category: 'religion')
   end
 
@@ -16,8 +16,7 @@ describe 'switching categories', type: :feature, driver: :selenium_firefox, js: 
 
   it 'goes from "All articles" category to a particular category' do
     visit '/articles#index'
-    page.select "religion", from: 'Category'
+    page.select 'religion', from: 'Category'
     expect(page).to have_current_path('/categories/religion')
   end
-
 end

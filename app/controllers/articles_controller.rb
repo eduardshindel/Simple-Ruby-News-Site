@@ -49,9 +49,9 @@ class ArticlesController < ApplicationController
   end
 
   def require_login
-    unless logged_in?
-      flash[:danger] = 'You have not access to this part of site!'
-      redirect_to controller: 'sessions', action: 'new'
-    end
+    return if logged_in?
+
+    flash[:danger] = 'You have not access to this part of site!'
+    redirect_to controller: 'sessions', action: 'new'
   end
 end
