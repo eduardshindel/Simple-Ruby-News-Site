@@ -35,7 +35,8 @@
 yarn-debug.log*
 .yarn-integrity
 
-/public
+public/*
+!public/images
 /coverage
 
 /config/database.yml
