@@ -67,7 +67,7 @@ GEM
       execjs (~> 2)
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.9.1)
+    bootsnap (1.9.3)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -289,7 +289,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
-  bootsnap (>= 1.4.4)
+  bootsnap (= 1.9.3)
   bootstrap-sass
   byebug
   capybara (>= 3.26)
@@ -320,7 +320,7 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.25
+   2.2.32
