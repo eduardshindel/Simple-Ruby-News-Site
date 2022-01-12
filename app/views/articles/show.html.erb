@@ -1,22 +1,21 @@
 <%=stylesheet_link_tag "articles" %>
+
+<h1>Articles</h1>
+
 <% if logged_in? %>
-<div class="toolsbar">
-<%= link_to 'All articles', articles_path %>
-|
-<%= link_to 'Create new article', new_article_path %>
-|
-<%= link_to 'Edit current article', edit_article_path(@article) %>
-|
-<%= link_to 'Delete current article', article_path(@article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
-</div>
-<hr>
+    <h4 class="menu">
+        <%= link_to 'All articles', articles_path %>
+        |
+        <%= link_to 'Create new article', new_article_path %>
+        |
+        <%= link_to 'Edit current article', edit_article_path(@article) %>
+        |
+        <%= link_to 'Delete current article', article_path(@article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+    </h4>
 <% end %>
-
-<h1><%= @article.title %></h1>
-<p>Category : <%= @article.category %></p>
-<p>Preview : <%= @article.preview %></p>
-<p>Text : <%= @article.body %></p>
-
-<p><%= image_tag @article.img.url(:thumb), alt: @article.title if @article.img? %></p>
-
-<p><%= image_tag @article.img.url if @article.img?%></p>
+<br>
+<%= image_tag "/images/default.jpg", class: 'no_big_image' if !@article.img? %>
+<p class="image"><%= image_tag @article.img.url if @article.img?%></p>
+<h1 class="title_in_black"><%= @article.title %></h1>
+<p class="category"><%= @article.category %></p>
+<p class="text"><%= @article.preview %><br><%= @article.body %></p>

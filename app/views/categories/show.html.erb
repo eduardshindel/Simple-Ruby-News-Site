@@ -1,12 +1,18 @@
-<%= link_to 'Create article', new_article_path %>
-<hr>
-
 <%=javascript_include_tag "category_handler" %>
+<%=stylesheet_link_tag "articles" %>
+
 <h1>Articles</h1>
+
+<% if logged_in? %>
+  <h4 class="menu"><%= link_to 'Create article', new_article_path%></h4 >
+<% end %>
 
 <%= 'No news right now, Chef' if @articles.empty? %>
 
-<%= select_tag "Category", options_for_select(Article.pluck(:category).uniq),:include_blank => 'All articles', :prompt => 'Select category', :onchange=>"categoryHandler(this.value)"    %>
+<div class="selector">
+    <%= select_tag "Category", options_for_select(Article.pluck(:category).uniq),:include_blank => 'All articles', :prompt => 'Select category', :onchange=>"categoryHandler(this.value)"    %>
+</div >
 
 <%= render @articles %>
-<%= will_paginate @articles %>
+
+<div class="toolsbar"><%= will_paginate @articles %></div>

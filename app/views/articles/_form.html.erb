@@ -1,34 +1,32 @@
 <% if @article.errors.any? %>
-  <%= t('common.errors') %>
-  <ul>
+  <ul class="error">
     <% @article.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
-
-<%= form_for @article, html: { multipart: true } do |f| %>
+<div class="new_article">
+  <%= form_for @article, html: { multipart: true } do |f| %>
     <p>
-    <%= f.label :category, 'Category' %><br />
-    <%= f.text_area :category %>
-  </p>
-  <p>
-    <%= f.label :title, 'Title:' %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-  <%= f.label :preview, 'Preview:' %><br />
-  <%= f.text_field :preview %>
-</p>
+      <%= f.label :category, 'Category' %><br>
+      <%= f.text_area :category, class: 'form' %>
+    </p>
     <p>
-  <%= f.label :img, 'Related picture:' %><br />
-  <%= f.file_field :img %>
-</p>
-
-  <p>
-    <%= f.label :body, 'Main text:' %><br />
-    <%= f.text_area :body %>
-  </p>
-
-  <p><%= f.submit 'Save' %> | <%= link_to 'Cancel', articles_path %></p>
+      <%= f.label :title, 'Title:' %><br>
+      <%= f.text_field :title, class: 'form' %>
+    </p>
+    <p>
+      <%= f.label :preview, 'Preview:' %><br>
+      <%= f.text_field :preview, class: 'form' %>
+    </p>
+    <p>
+      <%= f.label :img, 'Related picture:' %><br>
+      <%= f.file_field :img, class: 'button' %>
+    </p>
+    <p>
+      <%= f.label :body, 'Main text:' %><br />
+      <%= f.text_area :body, class: 'form' %>
+    </p>
+    <p ><%= f.submit 'Save', class: 'form' %> | <%= link_to 'Cancel', articles_path %></p>
+  </div>
 <% end %>

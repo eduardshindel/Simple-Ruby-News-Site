@@ -3,10 +3,125 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 h1 {
-    color: blue;
-    text-align: center;
+    color: white;
+    text-align: left;
+    padding-left: 10%;
+    padding-top: 25px;
+    height: 100px;
+    background-color: firebrick;
+}
+
+body {
+    background-color: #333333;
+}
+
+a {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+span {
+    color: white;
+}
+
+em {
+    color: white;
+}
+
+.title {
+    margin-top: -90px;
+    margin-left: 17%;
+}
+
+.preview {
+    margin-left: 17%;
+    margin-bottom: 70px;
+}
+
+.image {
+    margin-left: 10%;
+}
+
+.no_image {
+    margin-left: 10%;
+    width: 120px;
+    height: 120px;
+}
+
+.no_big_image {
+    margin-left: 10%;
+    width: 800px;
+    height: 800px;
+}
+
+.menu {
+    margin-left: 40%;
+    margin-top: -70px;
+    margin-bottom: 40px;
 }
 
 .toolsbar {
     text-align: center;
+}
+
+.title_in_black {
+    margin-left: 10%;
+    opacity: .7;
+    margin-top: -111px;
+    width: 800px;
+    height: 101px;
+    background-color: dimgrey;
+    padding-top: 1%;
+    padding-left: 5%;
+}
+
+.category {
+    position: relative;
+    margin-top: -161px;
+    margin-left: 12%;
+    width: 100px;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 24px;
+    color: white;
+    background-color: crimson;
+}
+
+.text {
+    text-align: left;
+    margin-left: 1025px;
+    font-size: 20px;
+    margin-top: -650px;
+}
+
+.new_article {
+    color: white;
+    text-align: center;
+}
+
+.button {
+    margin-left: 45%;
+}
+
+.error {
+    color: black;
+    text-align: center;
+    background-color: #f2dede;
+    width: 250px;
+    margin-left: 43%;
+    border-radius: 15px;
+    border: 1px solid #ebccd1;
+}
+
+.form {
+    background-color: #393E41;
+}
+
+.selector {
+    margin-left: 90%;
+    margin-top: -65px;
+    margin-bottom: 60px;
 }
