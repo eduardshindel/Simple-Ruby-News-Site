@@ -14,8 +14,12 @@
     </h4>
 <% end %>
 <br>
-<%= image_tag "/images/default.jpg", class: 'no_big_image' if !@article.img? %>
-<p class="image"><%= image_tag @article.img.url if @article.img?%></p>
-<h1 class="title_in_black"><%= @article.title %></h1>
-<p class="category"><%= @article.category %></p>
-<p class="text"><%= @article.preview %><br><%= @article.body %></p>
+<% if @article.img? %>
+   <p class="image"><%= image_tag @article.img.url %></p>
+<% else %>
+   <p><%= image_tag "/images/default.jpg", class: 'big_image' %></p>
+<% end %>
+<h1 class="title_in_show_html"><%= @article.title %></h1>
+<p class="category">#<%= @article.category %></p>
+<p class="time"><%= @article.created_at.strftime("%F %H:%M") %></p> 
+<p class="text"><%= @article.body %></p>
