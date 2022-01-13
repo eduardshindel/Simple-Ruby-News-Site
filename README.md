@@ -1,4 +1,4 @@
-# Valera Online
+# RubyNews!
 ![Unit Tests & Lint](https://github.com/lew14748/Simple-Ruby-News-Site/workflows/Unit%20Tests%20&%20Lint/badge.svg)  
 ### Ruby version 
  * 3.0.3
