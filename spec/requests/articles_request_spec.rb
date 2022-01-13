@@ -82,13 +82,27 @@ RSpec.describe 'Articles requests', type: :request do
   end
 
   context 'when going to without login' do
-    describe 'visit articles/new without login' do
-      it 'visiting should be failed' do
-        post '/articles',
-             params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
-                                  category: '', img: '' } }
-        expect(response.status).to eq(200)
-      end
+    it 'visiting should be failed' do
+      post '/articles',
+           params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
+                                category: '', img: '' } }
+      expect(response.status).to eq(200)
+    end
+  end
+
+  context 'when visiting articles' do
+    before do
+      Article.create(title: 'politics_title', body: 'politics_body', preview: 'politics_preview', category: 'politics')\
+    end
+
+    it 'visits existing page' do
+      get '/articles/1'
+      expect(response.status).to eq(200)
+    end
+
+    it 'visits unexisting page' do
+      get '/articles/5'
+      expect(response.status).to eq(404)
     end
   end
 end
