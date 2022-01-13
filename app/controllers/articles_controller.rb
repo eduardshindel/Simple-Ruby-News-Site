@@ -42,8 +42,6 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    render file: Rails.root.join('public/404.html'), layout: false, status: :not_found if @article.blank?
   end
 
   def article_params

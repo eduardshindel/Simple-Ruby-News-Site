@@ -101,8 +101,7 @@ RSpec.describe 'Articles requests', type: :request do
     end
 
     it 'visits unexisting page' do
-      get '/articles/5'
-      expect(response.status).to eq(404)
+      expect { get '/articles/5' }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

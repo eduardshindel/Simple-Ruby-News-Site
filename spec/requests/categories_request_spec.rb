@@ -15,8 +15,7 @@ RSpec.describe 'Categories', type: :request do
     end
 
     it 'goes to unexisting category' do
-      get '/categories/relig1on'
-      expect(response.status).to eq(404)
+      expect { get '/categories/relig1on' }.to raise_error('Not Found')
     end
   end
 end
