@@ -41,7 +41,10 @@ class ArticlesController < ApplicationController
   private
 
   def set_article
+
     @article = Article.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render file: Rails.root.join('public/404.html'), layout: false, status: :not_found if @article.blank?
   end
 
   def article_params
@@ -50,7 +53,6 @@ class ArticlesController < ApplicationController
 
   def require_login
     return if logged_in?
-
     flash[:danger] = 'You have not access to this part of site!'
     redirect_to controller: 'sessions', action: 'new'
   end
