@@ -11,7 +11,6 @@ RSpec.describe SessionsHelper, type: :helper do
     it 'correct log in' do
       log_in(user1)
       expect(session[:user_id]).to eq user1.id
-      expect(logged_in?).to be true
     end
 
     it 'checks correct logged_in' do
