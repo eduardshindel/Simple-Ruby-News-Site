@@ -60,7 +60,6 @@ RSpec.describe 'Articles requests', type: :request do
             params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
                                  category: 'turtle', img: '' } }
 
-      expect(response.status).to eq(302)
       expect(request.original_fullpath).to eq('/articles/1')
     end
 
