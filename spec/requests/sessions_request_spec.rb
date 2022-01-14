@@ -10,7 +10,6 @@ RSpec.describe 'Sessions', type: :request do
       post '/login',
            params: { session: { username: 'admin', password: 'admin' } }
 
-      expect(response.status).to eq(302)
       expect(response).to redirect_to '/articles'
     end
 
@@ -18,7 +17,6 @@ RSpec.describe 'Sessions', type: :request do
       post '/login',
            params: { session: { username: 'admin', password: 'admon' } }
 
-      expect(response.status).to eq(200)
       expect(request.original_fullpath).to eq('/login')
     end
   end
