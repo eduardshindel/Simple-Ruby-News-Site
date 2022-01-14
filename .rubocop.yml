@@ -17,6 +17,3 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
-
-RSpec/MultipleExpectations:
-  Enabled: false
