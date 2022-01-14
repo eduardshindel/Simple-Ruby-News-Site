@@ -3,7 +3,7 @@
 <% if article.img? %>
    <p class="image"><%= image_tag article.img.url(:thumb) %></p>
 <% else %>
-   <p><%= image_tag "/images/default.jpg", class: 'no_image' %></p>
+   <p><%= image_tag "/images/default.png", class: 'default_image' %></p>
 <% end %>
 <h3 class="title"><%= link_to article.title, article_path(article) %></h3>
 <p class="preview"><%= article.preview %></p>

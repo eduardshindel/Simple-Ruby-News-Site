@@ -1,6 +1,10 @@
-<%=stylesheet_link_tag "articles" %>
+<head>
+    <%=stylesheet_link_tag "articles" %>
+    <% @title=@article.title %>
+</head>
 
 <h1>Articles</h1>
+<p><%= image_tag "/images/logo.png", class: 'logo' %></p>
 
 <% if logged_in? %>
     <h4 class="menu">
@@ -17,7 +21,7 @@
 <% if @article.img? %>
    <p class="image"><%= image_tag @article.img.url %></p>
 <% else %>
-   <p><%= image_tag "/images/default.jpg", class: 'big_image' %></p>
+   <p><%= image_tag "/images/default.png", class: 'big_default_image' %></p>
 <% end %>
 <h1 class="title_in_show_html"><%= @article.title %></h1>
 <p class="category">#<%= @article.category %></p>
