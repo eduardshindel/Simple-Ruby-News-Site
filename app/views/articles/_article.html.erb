@@ -1,9 +1,9 @@
 <%=stylesheet_link_tag "articles" %>
 
 <% if article.img? %>
-   <p class="image"><%= image_tag article.img.url(:thumb) %></p>
+   <p class="image"><%= link_to image_tag(article.img.url(:thumb)), article_path(article) %></p>
 <% else %>
-   <p><%= image_tag "/images/default.png", class: 'default_image' %></p>
+   <p><%= link_to image_tag("/images/default.png", class: 'default_image'), article_path(article) %></p>
 <% end %>
 <h3 class="title"><%= link_to article.title, article_path(article) %></h3>
 <p class="preview"><%= article.preview %></p>

@@ -1,1 +1,25 @@
-hi im here, your mascot!!
+<head>
+  <%=javascript_include_tag "category_handler" %>
+  <%=stylesheet_link_tag "articles" %>
+  <% @title="Mascot" %>
+</head>
+
+<h1>Mascot</h1>
+<p><%= link_to image_tag("/images/logo.png", class: 'logo'), articles_path %></p>
+
+<% if logged_in? %>
+  <h4 class="menu"><%= link_to 'Create article', new_article_path%></h4 >
+<% end %>
+
+
+<h3>hi im here, your mascot!!</h3>
+<%= image_tag "/images/mascot.png", class: 'mascot_page' %>
+<%= image_tag "/images/cloud.png", class: 'cloud' %>
+<p class="text_in_cloud">
+    Hello there! My name's Johny<br>
+    and I'm your new favourite mascot.<br>
+    I'll provide you with the most actual<br>
+    news and the most interesting articles.<br>
+    I would invite you for a tea if i wasn't<br>
+    just a png.. Or.. Who knows..
+</p>

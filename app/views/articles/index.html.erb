@@ -4,8 +4,8 @@
   <% @title="Articles" %>
 </head>
 
-<h1>Articles</h1>
-<p><%= image_tag "/images/logo.png", class: 'logo' %></p>
+<h1><%= link_to 'Articles', articles_path %></h1>
+<p><%= link_to image_tag("/images/logo.png", class: 'logo'), articles_path %></p>
 
 <% if logged_in? %>
   <h4 class="menu"><%= link_to 'Create article', new_article_path%></h4 >
@@ -20,3 +20,4 @@
 <%= render @articles %>
 
 <div class="digg_pagination"> <%= will_paginate @articles %></div>
+<%= link_to image_tag('/images/mascot.png', class: 'mascot'), mascot_path %>

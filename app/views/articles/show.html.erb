@@ -3,8 +3,8 @@
     <% @title=@article.title %>
 </head>
 
-<h1>Articles</h1>
-<p><%= image_tag "/images/logo.png", class: 'logo' %></p>
+<h1><%= link_to 'Articles', articles_path %></h1>
+<p><%= link_to image_tag("/images/logo.png", class: 'logo'), articles_path %></p>
 
 <% if logged_in? %>
     <h4 class="menu">
@@ -24,6 +24,6 @@
    <p><%= image_tag "/images/default.png", class: 'big_default_image' %></p>
 <% end %>
 <h1 class="title_in_show_html"><%= @article.title %></h1>
-<p class="category">#<%= @article.category %></p>
+<p class="category"><%= link_to '#' + @article.category, '/' + 'categories/' + @article.category %></p>
 <p class="time"><%= @article.created_at.strftime("%F %H:%M") %></p> 
 <p class="text"><%= @article.body %></p>
