@@ -1,0 +1,2 @@
+class MascotController < ApplicationController
+end
