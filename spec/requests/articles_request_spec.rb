@@ -65,6 +65,7 @@ RSpec.describe 'Articles requests', type: :request do
                                  category: 'turtle', img: '' } }
 
       expect(response.status).to eq(302)
+      expect(request.original_fullpath).to eq('/articles/1')
     end
 
     it 'wrong update article' do
@@ -73,6 +74,7 @@ RSpec.describe 'Articles requests', type: :request do
                                  img: '' } }
 
       expect(response.status).to eq(200)
+      expect(request.original_fullpath).to eq('/articles/1')
     end
 
     it 'destroy article' do
@@ -91,6 +93,7 @@ RSpec.describe 'Articles requests', type: :request do
            params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
                                 category: '', img: '' } }
       expect(response.status).to eq(200)
+      expect(request.original_fullpath).to eq('/articles')
     end
   end
 
@@ -102,6 +105,7 @@ RSpec.describe 'Articles requests', type: :request do
     it 'visits existing page' do
       get '/articles/1'
       expect(response.status).to eq(200)
+      expect(request.original_fullpath).to eq('/articles/1')
     end
 
     it 'visits unexisting page' do
