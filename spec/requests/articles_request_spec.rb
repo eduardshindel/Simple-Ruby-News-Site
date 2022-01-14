@@ -13,7 +13,6 @@ RSpec.describe 'Articles requests', type: :request do
       post '/articles',
            params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
                                 category: 'turtle', img: '' } }
-      expect(response.status).to eq(302)
       expect(response).to redirect_to '/articles/1'
     end
 
@@ -21,7 +20,6 @@ RSpec.describe 'Articles requests', type: :request do
       post '/articles',
            params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew', category: '',
                                 img: '' } }
-      expect(response.status).to eq(200)
       expect(request.original_fullpath).to eq('/articles')
     end
   end
@@ -36,13 +34,11 @@ RSpec.describe 'Articles requests', type: :request do
 
     it 'go to articles/new' do
       get '/articles/new'
-      expect(response.status).to eq(200)
       expect(request.original_fullpath).to eq('/articles/new')
     end
 
     it 'go to article list' do
       get '/articles'
-      expect(response.status).to eq(200)
       expect(request.original_fullpath).to eq('/articles')
     end
   end
@@ -73,7 +69,6 @@ RSpec.describe 'Articles requests', type: :request do
             params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew', category: '',
                                  img: '' } }
 
-      expect(response.status).to eq(200)
       expect(request.original_fullpath).to eq('/articles/1')
     end
 
@@ -92,7 +87,6 @@ RSpec.describe 'Articles requests', type: :request do
       post '/articles',
            params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
                                 category: '', img: '' } }
-      expect(response.status).to eq(200)
       expect(request.original_fullpath).to eq('/articles')
     end
   end
@@ -104,7 +98,6 @@ RSpec.describe 'Articles requests', type: :request do
 
     it 'visits existing page' do
       get '/articles/1'
-      expect(response.status).to eq(200)
       expect(request.original_fullpath).to eq('/articles/1')
     end
 
