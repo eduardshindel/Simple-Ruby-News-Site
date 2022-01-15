@@ -5,6 +5,7 @@
 
 <div class="row">
   <h2>Log in</h2>
+  <% if !logged_in? %>
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
@@ -17,4 +18,7 @@
       <%= f.submit "Log in", class: "btn btn-primary", id: "log-in-button" %>
     <% end %>
   </div>
+  <% else %>
+You are logged in already..
+  <% end %>
 </div>
