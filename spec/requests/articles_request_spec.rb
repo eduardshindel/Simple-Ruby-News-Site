@@ -55,12 +55,20 @@ RSpec.describe 'Articles requests', type: :request do
                                 category: 'turtle', img: '' } }
     end
 
-    it 'update article' do
+    it 'updates article and article exists' do
       patch '/articles/1',
             params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
                                  category: 'turtle', img: '' } }
 
       expect(request.original_fullpath).to eq('/articles/1')
+    end
+
+    it 'updates article and gets correct response' do
+      patch '/articles/1',
+            params: { article: { title: 'Test title', body: 'test body text', preview: 'test prew',
+                                 category: 'turtle', img: '' } }
+
+      expect(response.status).to eq(302)
     end
 
     it 'wrong update article' do
